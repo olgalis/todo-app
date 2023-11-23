@@ -1,6 +1,7 @@
 const theme = document.getElementById('theme');
 const newItemInput = document.getElementById('addItem');
 const todoList = document.querySelector('.content ul');
+const itemsLeft = document.querySelector('.items-left span');
 
 theme.addEventListener('click', () => {
     const bodyElement = document.querySelector('body');
@@ -31,4 +32,11 @@ function createNewTodoItem(text) {
         </label>
         <span class="remove"></span>`;
     todoList.appendChild(elem);
+    updateItemsCount(1);
 }
+
+function updateItemsCount(number) { 
+    itemsLeft.innerText = +itemsLeft.innerText + number;
+    
+
+};
